@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Video Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                File
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <!-- Move the Import Video Button Here -->
+                        <label for="fileInput" class="import-button">Import Video</label>
+                        <input type="file" id="fileInput" accept="video/*" multiple style="display: none;" />
+                    </li>
+                    <li class="dropdown-item">Save Project</li>
+                    <li class="dropdown-item">
+                        <!-- Export Video Button -->
+                        <label for="exportButton" class="export-button">Export Video</label>
+                    </li>
+                    <!-- You can add more dropdown items here -->
+                </ul>
+            </li>
+            <li class="navbar-item">
+                Edit
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Undo</li>
+                    <li class="dropdown-item">Redo</li>
+                    <li class="dropdown-item">Cut</li>
+                    <li class="dropdown-item">Copy</li>
+                    <li class="dropdown-item">Paste</li>
+                    <!-- Add more edit options -->
+                </ul>
+            </li>
+                <!-- Add dropdown items for Edit menu if needed -->
+            </li>
+            <!-- Add more navbar items as needed -->
+        </ul>
+    </nav>
+
+    <!-- Rest of your content -->
+    <div class="editor-container">
+        <!-- Clips Library -->
+        <div class="clips-library">
+            <h2>Clips</h2>
+            <div id="uploadedClips"></div>
+        </div>
+
+        <!-- Video Preview Area -->
+        <div class="preview-area">
+            <h2>Video Preview</h2>
+            <video id="videoPreview"></video>
+        </div>
+
+        <!-- Effects Library -->
+<!-- Effects Library -->
+<div class="effects-library">
+    <h2>Effects</h2>
+    <!-- Clip Information -->
+    <div id="clipInfoPanel">
+        <h3>Clip Information</h3>
+        <p><strong>Duration:</strong> <span id="clipDuration">N/A</span></p>
+        <p><strong>Resolution:</strong> <span id="clipResolution">N/A</span></p>
+        <p><strong>Frame Rate:</strong> <span id="clipFrameRate">N/A</span></p>
+    </div>
+
+    <!-- Speed Graph -->
+    <div id="speedGraphContainer">
+        <h3>Speed Graph</h3>
+        <canvas id="speedGraphCanvas" width="300" height="150"></canvas>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Timeline at the bottom of the screen -->
+    <div class="timeline-area">
+        <h2>Timeline</h2>
+        <div class="timeline" id="timeline">
+            <!-- Time Markers -->
+            <div class="time-markers" id="timeMarkers"></div>
+            <!-- Cursor Element -->
+            <div class="cursor" id="cursor"></div>
+            <!-- Timeline Rows -->
+            <div class="row" id="row1"></div>
+            <div class="row" id="row2"></div>
+            <div class="row" id="row3"></div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+<script src="script.js"></script>
+</html>
+
+
+
